@@ -954,3 +954,103 @@ body {
 .css-editor-reset:hover {
   color: white;
 }
+
+/* Custom Design Footer */
+.design-custom-footer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 2rem;
+  transition: all 0.5s;
+}
+
+.custom-footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2.5rem 0.75rem 2.5rem;
+  font-weight: 900;
+  font-size: 13px;
+  line-height: 1;
+}
+
+.footer-text-left {
+  color: #94a3b8;
+  letter-spacing: 0.05em;
+  font-family: 'Inter', sans-serif;
+}
+
+.footer-text-right {
+  color: var(--primary);
+  font-family: inherit;
+}
+
+.footer-accent-strip {
+  height: 5px;
+  width: 100%;
+  transition: background-color 0.5s;
+}
+
+/* Logo Selector Grid */
+.logo-selector-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.logo-option-button {
+  aspect-ratio: 1;
+  background-color: #111827;
+  border: 1px solid #334155;
+  border-radius: 0.5rem;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.logo-option-button:hover {
+  border-color: var(--accent-emerald);
+}
+
+.logo-option-button.active {
+  background-color: rgba(16, 185, 129, 0.1);
+  border-color: var(--accent-emerald);
+  box-shadow: 0 0 0 1px var(--accent-emerald);
+}
+
+.logo-option-button img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.remove-logo-button {
+  width: 100%;
+  margin-top: 0.75rem;
+  padding: 0.5rem;
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 0.5rem;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.remove-logo-button:hover {
+  background-color: rgba(239, 68, 68, 0.2);
+}
+
+.logo-selection-label {
+  margin-top: 1.5rem !important;
+  margin-bottom: 0.75rem !important;
+}

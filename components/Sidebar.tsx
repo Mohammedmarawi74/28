@@ -121,22 +121,34 @@ const Sidebar: React.FC<SidebarProps> = ({ data, onUpdate }) => {
                 onChange={(e) => handleFileUpload(e, 'logoUrl')}
               />
             </div>
-            
-            <label className="field-label">موضع الشعار</label>
-            <div className="pos-grid">
-              {(['top-right', 'top-left', 'bottom-right', 'bottom-left'] as LogoPosition[]).map((pos) => (
-                <button
-                  key={pos}
-                  onClick={() => onUpdate({ logoPosition: pos })}
-                  className={`pos-button ${data.logoPosition === pos ? 'active' : ''}`}
-                >
-                  {pos === 'top-right' && 'أعلى اليمين'}
-                  {pos === 'top-left' && 'أعلى اليسار'}
-                  {pos === 'bottom-right' && 'أسفل اليمين'}
-                  {pos === 'bottom-left' && 'أسفل اليسار'}
-                </button>
-              ))}
+
+            <label className="field-label logo-selection-label">اختر شعاراً من القائمة</label>
+            <div className="logo-selector-grid">
+              {['logo-1.png', 'logo-2.png', 'logo-3.png', 'logo-4.png'].map((logoName) => {
+                const logoPath = `/logooo/${logoName}`;
+                return (
+                  <button
+                    key={logoName}
+                    onClick={() => onUpdate({ 
+                      logoUrl: logoPath, 
+                      logoPosition: 'top-right' // Set to top-right as requested when selecting
+                    })}
+                    className={`logo-option-button ${data.logoUrl === logoPath ? 'active' : ''}`}
+                  >
+                    <img src={logoPath} alt={logoName} />
+                  </button>
+                );
+              })}
             </div>
+
+            {data.logoUrl && (
+              <button 
+                onClick={() => onUpdate({ logoUrl: '' })}
+                className="remove-logo-button"
+              >
+                <Trash2 size={14} /> إزالة الشعار بالكامل
+              </button>
+            )}
           </div>
 
           <div className="field-group pt-2 border-t border-slate-700/50">

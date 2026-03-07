@@ -195,6 +195,15 @@ const PreviewCard: React.FC<PreviewCardProps> = ({ data }) => {
           </div>
         </div>
       </div>
+
+      {/* Custom Bottom Footer */}
+      <div className="design-custom-footer">
+        <div className="custom-footer-content">
+          <span className="footer-text-left">al_investor.com</span>
+          <span className="footer-text-right">منصة المستثمر</span>
+        </div>
+        <div className="footer-accent-strip" style={{ backgroundColor: 'var(--primary)' }}></div>
+      </div>
     </div>
   );
 };
